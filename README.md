@@ -79,7 +79,7 @@ TWITTER_TWID=<your_twitter_twid>
 ```
 
 Replace `<your_mongodb_connection_string>` and other placeholders with your actual values.
-Your can get your twitter credentials from cookies tab at x.com.
+You can get your twitter credentials from cookies tab at x.com.
 
 ## API Endpoints
 
