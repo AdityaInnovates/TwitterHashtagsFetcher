@@ -72,7 +72,6 @@ Create a `.env` file in the root directory of the project and add the following 
 
 ```
 MONGODB_SRV=<your_mongodb_connection_string>
-PORT=<your_desired_port>
 TWITTER_AUTH_TOKEN=<your_twitter_auth_token>
 TWITTER_CT0=<your_twitter_ct0_value>
 TWITTER_PERSONALIZED_ID=<your_twitter_personalized_id>
@@ -80,6 +79,7 @@ TWITTER_TWID=<your_twitter_twid>
 ```
 
 Replace `<your_mongodb_connection_string>` and other placeholders with your actual values.
+Your can get your twitter credentials from cookies tab at x.com.
 
 ## API Endpoints
 

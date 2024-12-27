@@ -28,7 +28,7 @@ db.once("open", () => {
 app.use("/fetch-hashtags", fetchHashtagsRoute);
 app.use("/get-hashtags", getHashtagsRoute);
 
-const PORT = process.env.PORT || 5000;
+const PORT = 3456;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
