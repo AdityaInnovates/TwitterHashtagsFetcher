@@ -4,11 +4,10 @@ const bodyParser = require("body-parser");
 const fetchHashtagsRoute = require("./routes/fetchHashtags");
 const getHashtagsRoute = require("./routes/getHashtags");
 require("dotenv").config();
-// Initialize Express app
+const cors = require("cors");
 const app = express();
 app.use(bodyParser.json());
-
-// MongoDB connection
+app.use(cors());
 const mongoURI = process.env.MONGODB_SRV;
 try {
   mongoose.connect(mongoURI, {});
@@ -16,7 +15,6 @@ try {
   console.log(`Error: ${error.message}`);
 }
 
-// Improved error handling
 mongoose.connection.on("error", (err) => {
   console.error(`MongoDB connection error: ${err.message}`);
 });
@@ -27,11 +25,9 @@ db.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
-// Routes
 app.use("/fetch-hashtags", fetchHashtagsRoute);
 app.use("/get-hashtags", getHashtagsRoute);
 
-// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

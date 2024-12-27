@@ -10,7 +10,7 @@ const fetchTwitterTrends = async () => {
   const extensionPath = path.join(__dirname, "../extension");
   const chromeOptions = new chrome.Options();
   chromeOptions.addArguments("--headless");
-  //For Adding Rotating ProxyMesh Proxy
+  // For Adding Rotating ProxyMesh Proxy
   chromeOptions.addArguments(`--load-extension=${extensionPath}`);
   chromeOptions.addArguments("--disable-dev-shm-usage");
   chromeOptions.addArguments("--ignore-certificate-errors");
