@@ -11,10 +11,7 @@ app.use(bodyParser.json());
 // MongoDB connection
 const mongoURI = process.env.MONGODB_SRV;
 try {
-  mongoose.connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  mongoose.connect(mongoURI, {});
 } catch (error) {
   console.log(`Error: ${err.message}`);
 }
