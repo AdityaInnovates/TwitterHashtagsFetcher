@@ -10,10 +10,15 @@ app.use(bodyParser.json());
 
 // MongoDB connection
 const mongoURI = process.env.MONGODB_SRV;
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+try {
+  mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+} catch (error) {
+  console.log(`Error: ${err.message}`);
+}
+
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.once("open", () => {

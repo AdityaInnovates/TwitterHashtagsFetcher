@@ -8,7 +8,6 @@ const path = require("path");
 
 const fetchTwitterTrends = async () => {
   const extensionPath = path.join(__dirname, "../extension");
-
   const chromeOptions = new chrome.Options();
   chromeOptions.addArguments("--headless");
   //For Adding Rotating ProxyMesh Proxy
