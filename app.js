@@ -13,8 +13,13 @@ const mongoURI = process.env.MONGODB_SRV;
 try {
   mongoose.connect(mongoURI, {});
 } catch (error) {
-  console.log(`Error: ${err.message}`);
+  console.log(`Error: ${error.message}`);
 }
+
+// Improved error handling
+mongoose.connection.on("error", (err) => {
+  console.error(`MongoDB connection error: ${err.message}`);
+});
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
